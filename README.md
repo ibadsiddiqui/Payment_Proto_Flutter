@@ -1,4 +1,4 @@
-# payment Proto
+# Payment Proto
 
 A new Flutter application.
 
