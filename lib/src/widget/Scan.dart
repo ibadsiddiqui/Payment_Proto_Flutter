@@ -31,6 +31,7 @@ class _ScanState extends State<Scan> {
           ),
         ),
         IconButton(
+          tooltip: "Open Camera",
           icon: Icon(
             Icons.camera_alt,
             size: 50,
