@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_proto_flutter/src/widget/Scan.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,14 +16,16 @@ class MyApp extends StatelessWidget {
           length: 2,
           child: Scaffold(
             appBar: AppBar(
-                bottom: TabBar(
-              tabs: <Widget>[
-                Tab(icon: Icon(Icons.scanner)),
-                Tab(icon: Icon(Icons.create))
-              ],
-            )),
+              bottom: TabBar(
+                tabs: <Widget>[
+                  Tab(icon: Icon(Icons.scanner)),
+                  Tab(icon: Icon(Icons.create))
+                ],
+              ),
+              title: Text("Payment Scanner"),
+            ),
             body: TabBarView(
-              children: <Widget>[],
+              children: <Widget>[Scan(), Container()],
             ),
           )),
     );
