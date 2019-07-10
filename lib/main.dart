@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_proto_flutter/src/widget/Create.dart';
 import 'package:payment_proto_flutter/src/widget/Scan.dart';
 
 void main() => runApp(MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
               title: Text("Payment Scanner"),
             ),
             body: TabBarView(
-              children: <Widget>[Scan(), Container()],
+              children: <Widget>[Scan(), Create()],
             ),
           )),
     );
