@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ProductForm extends StatelessWidget {
+
+  final Function(String) productCallBack;
+
   final String category;
   final _formkey = GlobalKey<FormState>();
   final _textController = TextEditingController();
 
-  ProductForm({Key key, this.category}) : super(key: key);
+  ProductForm({Key key, this.category, this.productCallBack}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,9 @@ class ProductForm extends StatelessWidget {
             ),
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              productCallBack(_textController.text);
+            },
             child: Text("Product $category"),
           )
         ],
