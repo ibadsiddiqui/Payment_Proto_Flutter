@@ -6,19 +6,21 @@ import 'package:payment_proto_flutter/src/widget/ProductForm.dart';
 enum formState {id, name, price}
 
 class QRForm extends StatefulWidget {
+  final Function(String) serializedCallback;
+
+  const QRForm({Key key, this.serializedCallback}) : super(key: key);
+
   @override
   _QRFormState createState() => _QRFormState();
 }
 
 class _QRFormState extends State<QRForm> {
-
   var _state = formState.id;
   int _id;
   String _name;
   double _price;
 
   void _formCallback(value){
-    print("here");
     formState state;
     switch(_state){
       case formState.id:
@@ -34,6 +36,7 @@ class _QRFormState extends State<QRForm> {
         _price = double.parse(value);
         var product = Product(productId: _id,productName: _name,productPrice: _price);
         var serializedProduct = json.encode(product);
+        widget.serializedCallback(serializedProduct);
         break;
     }
     setState(() {
@@ -47,13 +50,10 @@ class _QRFormState extends State<QRForm> {
    switch(_state){
      case formState.id:
        return ProductForm(category: "Id",productCallBack: _formCallback,);
-
      case formState.name:
        return ProductForm(category: "Name",productCallBack: _formCallback,);
-       break;
      case formState.price:
        return ProductForm(category: "Price",productCallBack: _formCallback,);
-       break;
    }
   }
 }
