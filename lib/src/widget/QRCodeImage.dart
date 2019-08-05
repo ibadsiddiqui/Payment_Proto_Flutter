@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QRCodeImage extends StatelessWidget {
@@ -12,6 +13,8 @@ class QRCodeImage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 60.0),
         child: QrImage(
+          backgroundColor: Colors.white,
+          padding: EdgeInsets.all(40.0),
           data: product,
           size: 200,
         ),
