@@ -8,11 +8,13 @@ class QRCodeImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 60.0),
-      child: QrImage(
-        data: product,
-        size: 200,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 60.0),
+        child: QrImage(
+          data: product,
+          size: 200,
+        ),
       ),
     );
   }
