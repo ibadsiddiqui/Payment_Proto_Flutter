@@ -5,7 +5,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 class QRCodeImage extends StatelessWidget {
   final String product;
 
-  const QRCodeImage({Key key, this.product}) : super(key: key);
+  GlobalKey _repaintQRImae = GlobalKey();
+
+  QRCodeImage({Key key, this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
