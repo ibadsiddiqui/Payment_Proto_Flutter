@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:path_provider/path_provider.dart';
 
@@ -15,7 +16,10 @@ class FireStorage {
     return '$dirPath/${timstamp()}.png';
   }
 
-  static Future<File> writeQRImage(File file){
-
+  static Future<File> writeQRImage(File file, ByteData byteData) async {
+    final buffer = byteData.buffer;
+    return await file.writeAsBytes(
+        buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes)
+    );
   }
 }
