@@ -8,7 +8,7 @@ class Product{
   final String productName;
   final double productPrice;
 
-  Product({this.productId, this.productName,this.productPrice});
+  Product({this.productId, this.productName, this.productPrice});
 
   factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
 
