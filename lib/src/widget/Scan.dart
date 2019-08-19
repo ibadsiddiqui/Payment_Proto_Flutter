@@ -32,6 +32,7 @@ class _ScanState extends State<Scan> {
         ),
         IconButton(
           tooltip: "Open Camera",
+          onPressed: () {},
           icon: Icon(
             Icons.camera_alt,
             size: 50,
