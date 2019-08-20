@@ -43,7 +43,7 @@ class _QRFormState extends State<QRForm> {
       _state = state;
     });
   }
-
+  
 
   @override
   Widget build(BuildContext context) {
